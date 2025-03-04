@@ -77,7 +77,7 @@ cd $NEKRO_DATA_DIR || {
 # 如果当前目录没有 .env 文件，从仓库获取.env.example 并修改 .env 文件
 if [ ! -f .env ]; then
     echo "未找到.env文件，正在从仓库获取.env.example..."
-    if ! wget https://raw.githubusercontent.com/KroMiose/nekro-agent/main/docker/.env.example -O .env.temp; then
+    if ! wget https://raw.gitmirror.com/KroMiose/nekro-agent/main/docker/.env.example -O .env.temp; then
         echo "Error: 无法获取.env.example文件，请检查网络连接或手动创建.env文件。"
         exit 1
     fi
@@ -145,7 +145,7 @@ fi
 
 # 拉取 docker-compose.yml 文件
 echo "正在拉取 docker-compose.yml 文件..."
-if ! wget https://raw.githubusercontent.com/KroMiose/nekro-agent/main/docker/docker-compose.yml -O docker-compose.yml; then
+if ! wget https://raw.gitmirror.com/KroMiose/nekro-agent/main/docker/docker-compose.yml -O docker-compose.yml; then
     echo "Error: 无法拉取 docker-compose.yml 文件，请检查您的网络连接。"
     exit 1
 fi
